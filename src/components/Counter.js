@@ -40,3 +40,9 @@ export default function Counter(props) {
     </div>
   );
 }
+
+// useEffect( () => { }, [] ) = componentDidMount, only run once
+// useEffect( () => { }, [count] ) = componentDidUpdate, run when count changes
+// useEffect( () => { return () => { } }, [] ) = componentWillUnmount, run when component unmounts
+// useEffect( () => { return () => { } }, [count] ) = componentWillUnmount, run when component unmounts and count changes
+// useEffect( () => {} ) = componentDidMount + componentDidUpdate, run every time on every re-render

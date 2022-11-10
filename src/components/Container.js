@@ -1,4 +1,4 @@
-import './_components.css';
+import './styles/container.css';
 import clsx from "clsx";
 
 export default function Container(props) {

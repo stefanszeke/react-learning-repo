@@ -1,0 +1,47 @@
+
+.ui-button {
+  position: relative;
+  border: none;
+  padding: 5px;
+  border-radius: 6px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 90ms;
+  background-color: rgb(88, 88, 88);
+  color: white;
+}
+
+.hide-checkbox {
+  position: absolute;
+  font-size: 0.6rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 10px;
+}
+
+.ui-button:hover {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 4px 0px rgba(80, 80, 80, 0.616);
+}
+.greenBtn, .violetBtn {
+  color: white;
+}
+
+.buttonLargeFont {
+  font-size: 1.2rem;
+}
+
+.greenBtn {
+  background-color: rgb(98, 145, 98);
+}
+.violetBtn {
+  background-color: rgb(161, 80, 161);
+}
+
+.disabledBtn {
+  background-color: rgb(228, 228, 228);
+  color: rgb(221, 221, 221);
+  pointer-events: none;
+  user-select: none;
+}

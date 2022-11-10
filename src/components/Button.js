@@ -1,22 +1,17 @@
+import './styles/button.css';
 import clsx from "clsx";
 
 export default function Button(props) {
-  const { children, className, ...rest } = props;
+  const { children, className, visible, onButtonClick, onCheckboxChange, ...rest } = props;
 
   const classes = clsx("ui-button", className);
   return (
-      <button onClick={props.onButtonClick} className={classes} {...rest}>
+      <button onClick={onButtonClick} className={classes} {...rest}>
         {children}
+        <div className="hide-checkbox">
+          <label htmlFor="checkbox-visible" >hidden</label>
+          <input id="checkbox-visible" className="buttonCheckbox" type="checkbox" checked={visible} onChange={onCheckboxChange}/>
+        </div>
       </button>
   );
-}
-
-function getColor(classes) {
-  if (classes.includes("greenBtn")) {
-    return "green";
-  } else if (classes.includes("violetBtn")) {
-    return "violet";
-  } else {
-    return "default color";
-  }
 }

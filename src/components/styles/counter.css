@@ -1,0 +1,26 @@
+.ui-counter {
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 3px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.ui-counter h2 {
+  background-color: grey;
+  color: white;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.ui-counter-buttons {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.ui-counter-buttons button {
+  cursor: pointer;
+}

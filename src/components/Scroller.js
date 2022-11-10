@@ -1,11 +1,11 @@
-import './_components.css';
+import './styles/scroller.css';
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 
 export default function Scroller(props) {
 
   const [scroll, setScroll] = useState(0);
-  const { children, className, ...rest } = props;
+  const { className } = props;
   const classes = clsx("ui-scroller", className);
   
 

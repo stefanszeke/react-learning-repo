@@ -1,4 +1,4 @@
-import './_components.css';
+import './styles/counter.css';
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 
@@ -31,6 +31,7 @@ export default function Counter(props) {
   return (
     <div className={classes} {...rest}>
       <h3>Counter</h3>
+      <p>( document.title )</p>
       <h2>{count}</h2>
       <div className='ui-counter-buttons'>
         <button onClick={handleIncrementClick}>+</button>

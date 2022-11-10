@@ -4,7 +4,7 @@ import clsx from "clsx";
 export default function Button(props) {
   const { children, className, visible, onButtonClick, onCheckboxChange, ...rest } = props;
 
-  const classes = clsx("ui-button", className);
+  const classes = clsx("ui-button", className, `ui-button-${props.theme}`);
   return (
       <button onClick={onButtonClick} className={classes} {...rest}>
         {children}

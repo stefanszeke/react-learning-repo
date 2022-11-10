@@ -6,3 +6,11 @@
   padding: 10px;
   width: 500px;
 }
+
+.ui-container-light {
+  background-color: #fff;
+}
+
+.ui-container-dark {
+  background-color: rgb(39, 41, 44);
+}

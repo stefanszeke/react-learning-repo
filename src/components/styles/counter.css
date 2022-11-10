@@ -35,3 +35,8 @@
 .ui-counters h3{
   text-align: right;
 }
+
+.ui-counter-dark {
+  color: white;
+  background-color: rgb(24, 26, 31);
+}

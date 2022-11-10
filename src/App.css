@@ -1,0 +1,11 @@
+.clock-theme-container {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.body-dark {
+  background-color: rgb(27, 27, 27);
+  color: white;
+}

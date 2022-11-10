@@ -7,7 +7,7 @@ export default function Counter(props) {
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
   const { className, ...rest } = props;
-  const classes = clsx("ui-counter", className);
+  const classes = clsx("ui-counter", className, `ui-counter-${props.theme}`);
 
   const handleIncrementClick = () => { (count >= 9) ? setCount(0) : setCount(count + 1); setCount2(count) }
   const handleDecrementClick = () => { (count <= 0) ? setCount(9) : setCount(count - 1); setCount2(count) }

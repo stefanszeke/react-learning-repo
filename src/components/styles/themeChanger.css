@@ -1,0 +1,31 @@
+.ui-theme-changer_button {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: 1px solid white;
+
+  transition: 100ms ease-in-out;
+}
+
+.ui-theme-changer_button:hover {
+  transform: scale(1.03);
+}
+
+
+.lightButton {
+  background-color: orange;
+}
+.lightButton:hover {
+  filter: hue-rotate(-30deg) brightness(1.5);
+}
+
+.darkButton {
+  background-color: rgb(45, 41, 58);
+}
+.darkButton:hover {
+  filter: hue-rotate(30deg) brightness(2.0);
+}

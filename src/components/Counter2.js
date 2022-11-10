@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 export default function Counter2(props) {
   const [counter, setCounter] = useState(0);
   const [running, setRunning] = useState(false);
+
+  const classes = clsx("ui-counter", props.className, `ui-counter-${props.theme}`);
+
 
   useEffect(() => {
     if (running) {
@@ -18,7 +22,7 @@ export default function Counter2(props) {
   }
 
   return (
-    <div className="ui-counter">
+    <div className={classes}>
       <h3>{counter}</h3>
       <button onClick={handleButtonClick}> Start/Stop </button>
     </div>

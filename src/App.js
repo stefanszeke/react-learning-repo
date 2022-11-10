@@ -59,7 +59,6 @@ export default function App()
           <ThemeChanger theme={theme} onThemeChangeClick={handleThemeChangeClick}/>
         </div>
 
-        <Counter2 theme={theme}/>
 
         <Link href="https://stefanszeke.github.io/">stefanszeke.github.io</Link>
         {btnClass}
@@ -75,6 +74,7 @@ export default function App()
          ))}
 
         <Counter theme={theme}/>
+        <Counter2 theme={theme}/>
         <Input  theme={theme}></Input>
         {/* test */}
         <Scroller theme={theme}/>

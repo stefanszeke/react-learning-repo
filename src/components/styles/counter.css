@@ -24,3 +24,14 @@
 .ui-counter-buttons button {
   cursor: pointer;
 }
+
+.ui-counters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 2px;
+}
+
+.ui-counters h3{
+  text-align: right;
+}

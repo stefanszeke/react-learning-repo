@@ -4,5 +4,10 @@
   text-decoration: none;
   font-style: italic;
   color: rgb(161, 80, 161);
+  width: fit-content;
 }
 
+.ui-link:hover {
+  color: rgb(156, 118, 199);
+  text-decoration: underline;
+}

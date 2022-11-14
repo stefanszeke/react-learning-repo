@@ -43,7 +43,7 @@ export default function Counter2(props) {
       else { timerDiv.current.style.height = `${subCounter * 25}%` }
     }
 
-  }, [subCounter])
+  }, [subCounter, running])
 
 
   function handleButtonClick() {

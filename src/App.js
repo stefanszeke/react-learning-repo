@@ -47,7 +47,7 @@ export default function App()
       else { document.body.classList.add("body-dark") }
       localStorage.setItem("theme", theme)
     }
-  },[theme])
+  },[theme, onLoad])
 
 
   return (

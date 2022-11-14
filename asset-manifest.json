@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-test-app/static/css/main.23f4650d.css",
-    "main.js": "/react-test-app/static/js/main.f83d00cf.js",
-    "index.html": "/react-test-app/index.html",
-    "main.23f4650d.css.map": "/react-test-app/static/css/main.23f4650d.css.map",
-    "main.f83d00cf.js.map": "/react-test-app/static/js/main.f83d00cf.js.map"
+    "main.css": "/react-learning-repo/static/css/main.23f4650d.css",
+    "main.js": "/react-learning-repo/static/js/main.f83d00cf.js",
+    "index.html": "/react-learning-repo/index.html",
+    "main.23f4650d.css.map": "/react-learning-repo/static/css/main.23f4650d.css.map",
+    "main.f83d00cf.js.map": "/react-learning-repo/static/js/main.f83d00cf.js.map"
   },
   "entrypoints": [
     "static/css/main.23f4650d.css",

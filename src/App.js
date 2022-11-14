@@ -27,27 +27,23 @@ export default function App()
   const [buttons, setButtons] = useState(BUTTONSDATA);
   const [btnVisibility, setBtnVisibility] = useState(false);
 
-  const [theme, setTheme] = useState("");
-  const [onLoad, setOnLoad] = useState(true);
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
+
   
   const buttonsNotHidden = buttons.filter((button) => !button.hidden);
   const buttonList = btnVisibility ? buttons : buttonsNotHidden;
 
 
   useEffect(() => {
-    setTheme(localStorage.getItem("theme") || "light");
     if(localStorage.getItem("theme") === "dark") { document.body.classList.add("body-dark")}
   }, [])
 
 
   useEffect(() => {
-    if(onLoad) { return }
-    else {
       if(theme === "light") { document.body.classList.remove("body-dark") }
       else { document.body.classList.add("body-dark") }
       localStorage.setItem("theme", theme)
-    }
-  },[theme, onLoad])
+  },[theme])
 
 
   return (
@@ -83,7 +79,7 @@ export default function App()
   );
 
   function handleThemeChangeClick() {
-    setOnLoad(false)
+
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 

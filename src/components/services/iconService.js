@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faPause, faMoon, faSun  } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faPause, faMoon, faSun, faEye, faEyeSlash  } from '@fortawesome/free-solid-svg-icons'
 
 
 export default class iconsService {
@@ -9,5 +9,8 @@ export default class iconsService {
 
   static get sun() { return <FontAwesomeIcon icon={faSun} /> }
   static get moon() { return <FontAwesomeIcon icon={faMoon} /> }
+
+  static get eye() { return <FontAwesomeIcon icon={faEye} /> }
+  static get eyeSlash() { return <FontAwesomeIcon icon={faEyeSlash} /> }
 
 }

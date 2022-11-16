@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import './App.css';
+import iconsService from "./components/services/iconService";
 
 import Link from './components/Link';
 import Button from "./components/Button";
+import Button2 from "./components/Button2";
 import Container from "./components/Container";
 import Input from "./components/Input";
 import Counter from "./components/Counter";
@@ -54,10 +56,12 @@ export default function App()
         </div>
 
         <Link href="https://stefanszeke.github.io/">stefanszeke.github.io</Link>
+
         {btnClass}
-        <div>
-          <button onClick={ () => setBtnVisibility(true) } >show</button>
-          <button onClick={ () => setBtnVisibility(false) } >hide</button>
+
+        <div className="hide-show-buttons">
+          <Button2 theme={theme} onButtonClick={ () => setBtnVisibility(true) } > {iconsService.eye} show</Button2>
+          <Button2 theme={theme} onButtonClick={ () => setBtnVisibility(false) }> {iconsService.eyeSlash} hide</Button2>
         </div>
 
         { buttonList.map( (button, index) => ( 
@@ -69,8 +73,11 @@ export default function App()
         <Counter theme={theme}/>
         <Counter2 theme={theme}/>
         <Input  theme={theme}></Input>
+
         {/* test */}
+
         <Scroller theme={theme}/>
+        
       </Container>
     </div>
   );

@@ -1,9 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+import iconsService from "./services/iconService";
 
 
 
@@ -12,9 +9,6 @@ export default function Counter2(props) {
   const [subCounter, setSubCounter] = useState(0);
   const [counter, setCounter] = useState(0);
   const [running, setRunning] = useState(false);
-
-  const faPlayIcon = <FontAwesomeIcon icon={faPlay} />
-  const faPauseIcon = <FontAwesomeIcon icon={faPause} />
 
   const classes = clsx("ui-counter",'ui-counter2', props.className, `ui-counter-${props.theme}`);
 
@@ -55,9 +49,9 @@ export default function Counter2(props) {
 
   return (
     <div className={classes}>
-      
+
       <button className="timer-button" onClick={handleButtonClick}>
-        {running ? faPauseIcon : faPlayIcon}
+        {running ? iconsService.pause : iconsService.play}
       </button>
 
       <div className="timer-box">

@@ -1,19 +1,11 @@
 import './styles/themeChanger.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import iconsService from "./services/iconService";
 
 
 export default function ThemeChanger(props) {
 
-  const faMoonIcon = <FontAwesomeIcon icon={faMoon} />
-  const faSunIcon = <FontAwesomeIcon icon={faSun} />
-
-  
-  let themeIcon = props.theme === 'light' ? faMoonIcon : faSunIcon; 
+  let themeIcon = props.theme === 'light' ? iconsService.moon : iconsService.sun; 
   let classes = props.theme === 'dark' ? 'ui-theme-changer_button lightButton' : 'ui-theme-changer_button darkButton';
-
-
 
   return (
     <div className="ui-theme-changer">

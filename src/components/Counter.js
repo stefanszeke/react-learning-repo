@@ -1,5 +1,5 @@
 import './styles/counter.css';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import clsx from "clsx";
 import useCounter from "./hooks/_useCounter";
 
@@ -19,7 +19,6 @@ export default function Counter(props) {
 
     return () => clearInterval(interval);
   }, [count1])
-  // useEffect(() => { setCount3(count1) }, [count1])
 
   return (
     <div className={classes} {...rest}>

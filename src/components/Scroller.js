@@ -17,7 +17,7 @@ export default function Scroller(props) {
   return (
     <div className={classes}>
       <p>scroll Y</p>
-      <h3>{scroll}</h3>
+      <h3>{scroll.toFixed(0)}</h3>
     </div>
   )
 

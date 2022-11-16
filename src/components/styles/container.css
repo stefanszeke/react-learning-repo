@@ -14,3 +14,10 @@
 .ui-container-dark {
   background-color: rgb(31, 32, 32);
 }
+
+@media screen and (max-width: 660px) {
+  .ui-container {
+    width: 90%;
+  }
+}
+  

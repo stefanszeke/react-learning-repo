@@ -29,7 +29,6 @@ export default function App()
 
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
-  
   const buttonsNotHidden = buttons.filter((button) => !button.hidden);
   const buttonList = btnVisibility ? buttons : buttonsNotHidden;
 
@@ -37,7 +36,6 @@ export default function App()
   useEffect(() => {
     if(localStorage.getItem("theme") === "dark") { document.body.classList.add("body-dark")}
   }, [])
-
 
   useEffect(() => {
       if(theme === "light") { document.body.classList.remove("body-dark") }
@@ -54,7 +52,6 @@ export default function App()
           <Clock theme={theme}/>
           <ThemeChanger theme={theme} onThemeChangeClick={handleThemeChangeClick}/>
         </div>
-
 
         <Link href="https://stefanszeke.github.io/">stefanszeke.github.io</Link>
         {btnClass}
@@ -78,13 +75,12 @@ export default function App()
     </div>
   );
 
+  
   function handleThemeChangeClick() {
-
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
   function handleButtonClick(event) {
-    console.log(event.target.className);
     setBtnClass(`Button class: ${event.target.className}`);
   }
 

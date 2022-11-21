@@ -1,6 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext} from "react";
 import './App.css';
 import iconsService from "./components/services/iconService";
+import { ThemeContext } from "./components/contexts/ThemeContext";
+
 
 import Link from './components/Link';
 import Button from "./components/Button";
@@ -29,65 +31,60 @@ export default function App()
   const [buttons, setButtons] = useState(BUTTONSDATA);
   const [btnVisibility, setBtnVisibility] = useState(false);
 
-  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
-
   const textInputRef = useRef();
 
   const buttonsNotHidden = buttons.filter((button) => !button.hidden);
   const buttonList = btnVisibility ? buttons : buttonsNotHidden;
 
+  const themeContext = useContext(ThemeContext);
 
-  useEffect(() => {
-    if(localStorage.getItem("theme") === "dark") { document.body.classList.add("body-dark")}
-    textInputRef.current.focus();
-  }, [])
 
-  useEffect(() => {
-      if(theme === "light") { document.body.classList.remove("body-dark") }
-      else { document.body.classList.add("body-dark") }
-      localStorage.setItem("theme", theme)
-  },[theme])
+
+  useEffect(() => { textInputRef.current.focus() }, [])
+
 
 
   return (
     <div className="App">
-      <Container theme={theme}>
 
-        <div className="clock-theme-container">
-          <Clock theme={theme}/>
-          <ThemeChanger theme={theme} onThemeChangeClick={handleThemeChangeClick}/>
-        </div>
+          
+        <Container >
+          <div className="clock-theme-container">
+            <Clock />
+            <ThemeChanger onThemeChangeClick={handleThemeChangeClick}/>
+          </div>
 
-        <Link href="https://stefanszeke.github.io/">stefanszeke.github.io</Link>
+          <Link href="https://stefanszeke.github.io/">stefanszeke.github.io</Link>
 
-        {btnClass}
+          {btnClass}
 
-        <div className="hide-show-buttons">
-          <Button2 theme={theme} onButtonClick={ () => setBtnVisibility(true) } > {iconsService.eye} show</Button2>
-          <Button2 theme={theme} onButtonClick={ () => setBtnVisibility(false) }> {iconsService.eyeSlash} hide</Button2>
-        </div>
+          <div className="hide-show-buttons">
+            <Button2 onButtonClick={ () => setBtnVisibility(true) } > {iconsService.eye} show</Button2>
+            <Button2 onButtonClick={ () => setBtnVisibility(false) }> {iconsService.eyeSlash} hide</Button2>
+          </div>
 
-        { buttonList.map( (button, index) => ( 
-          <Button onButtonClick={handleButtonClick} theme={theme} key={button.id} className={button.classes} visible={button.hidden} onCheckboxChange={() => handleCheckboxCheck(button.id-1)}>
-             {button.name}
-          </Button>
-         ))}
+          { buttonList.map( (button, index) => ( 
+            <Button onButtonClick={handleButtonClick} key={button.id} className={button.classes} visible={button.hidden} onCheckboxChange={() => handleCheckboxCheck(button.id-1)}>
+              {button.name}
+            </Button>
+          ))}
 
-        <Counter theme={theme} />
-        <Counter2 theme={theme}/>
-        <Input inputRef={textInputRef} theme={theme}></Input>
+          <Counter />
+          <Counter2 />
+          <Input inputref={textInputRef} ></Input>
 
-        {/* test */}
+          {/* test */}
 
-        <Scroller theme={theme}/>
-        
-      </Container>
+          <Scroller />
+          
+        </Container>
+
     </div>
   );
 
   
   function handleThemeChangeClick() {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    themeContext.toggleTheme();
   }
 
   function handleButtonClick(event) {

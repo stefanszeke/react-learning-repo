@@ -1,11 +1,16 @@
 import './styles/input.css';
 import clsx from "clsx";
 import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 export default function Input(props) {
-  const { children, className, type = 'text',  ...rest } = props;
-  const classes = clsx("ui-input", className, `ui-input-${props.theme}`);
   const [display, setDisplay] = useState("write here");
+  const { children, className, type = 'text',  ...rest } = props;
+
+  const themeContext = useContext(ThemeContext);
+  const classes = clsx("ui-input", className, `ui-input-${themeContext.theme}`);
+  
 
 
 
@@ -18,7 +23,7 @@ export default function Input(props) {
 
   return (<div className={classes}>
     <h2>{display}</h2>
-    <input ref={props.inputRef} onChange={handleInputChange}  type={type} {...rest} />
+    <input ref={props.inputref} onChange={handleInputChange}  type={type} {...rest} />
   </div>);
 }
 

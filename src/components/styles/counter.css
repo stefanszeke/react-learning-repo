@@ -44,6 +44,7 @@
 .ui-counter2 {
   display: grid;
   grid-auto-flow: column;
+  align-items: center;
   grid-gap: 5px;
 }
 

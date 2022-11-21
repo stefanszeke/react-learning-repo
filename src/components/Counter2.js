@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import iconsService from "./services/iconService";
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 
 
@@ -10,7 +12,8 @@ export default function Counter2(props) {
   const [counter, setCounter] = useState(0);
   const [running, setRunning] = useState(false);
 
-  const classes = clsx("ui-counter",'ui-counter2', props.className, `ui-counter-${props.theme}`);
+  const themeContext = useContext(ThemeContext);
+  const classes = clsx("ui-counter",'ui-counter2', props.className, `ui-counter-${themeContext.theme}`);
 
   const timerDiv = useRef(null);
 
@@ -49,7 +52,7 @@ export default function Counter2(props) {
 
   return (
     <div className={classes}>
-
+      <p>useRef()</p>
       <button className="timer-button" onClick={handleButtonClick}>
         {running ? iconsService.pause : iconsService.play}
       </button>

@@ -1,10 +1,14 @@
 import './styles/button.css';
 import clsx from "clsx";
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 export default function Button(props) {
   const { children, className, visible, onButtonClick, onCheckboxChange, ...rest } = props;
 
-  const classes = clsx("ui-button", className, `ui-button-${props.theme}`);
+  const themeContext = useContext(ThemeContext);
+  const classes = clsx("ui-button", className, `ui-button-${themeContext.theme}`);
+  
   return (
       <button onClick={onButtonClick} className={classes} {...rest}>
         {children}

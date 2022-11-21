@@ -1,13 +1,14 @@
 import './styles/scroller.css';
 import clsx from "clsx";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 export default function Scroller(props) {
-
   const [scroll, setScroll] = useState(0);
-  const { className } = props;
-  const classes = clsx("ui-scroller", className);
-  
+
+  const themeContext = useContext(ThemeContext);
+  const classes = clsx("ui-scroller", props.className, `ui-scroller-${themeContext.theme}`);
 
   useEffect(() => {
     window.addEventListener("scroll", handelWindowScroll);

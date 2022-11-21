@@ -10,6 +10,7 @@ export default function ThemeChanger(props) {
   return (
     <div className="ui-theme-changer">
       <button className={classes} onClick={props.onThemeChangeClick} > {themeIcon} </button>
+      <p>(useContext)</p>
     </div>
   )
 

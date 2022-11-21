@@ -2,12 +2,15 @@ import './styles/counter.css';
 import { useEffect } from "react";
 import clsx from "clsx";
 import useCounter from "./hooks/_useCounter";
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 export default function Counter(props) {
   const {count1, count2, count3, increment, decrement, addThree, reset} = useCounter({startValue: 1});
-
   const { className, ...rest } = props;
-  const classes = clsx("ui-counter", className, `ui-counter-${props.theme}`);
+
+  const themeContext = useContext(ThemeContext);
+  const classes = clsx("ui-counter", className, `ui-counter-${themeContext.theme}`);
 
   useEffect(() => {
     if(count1 === 0) { document.title = "React App" }
@@ -23,7 +26,7 @@ export default function Counter(props) {
   return (
     <div className={classes} {...rest}>
       <h3>Counter</h3>
-      <p>( document.title )</p>
+      <p>( affect document.title, use custom hook )</p>
       <div className="ui-counters">
         <h3>counter: </h3>
         <h2>{count1}</h2>

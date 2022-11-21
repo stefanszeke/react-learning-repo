@@ -70,7 +70,7 @@ export default function App()
           </Button>
          ))}
 
-        <Counter theme={theme}/>
+        <Counter theme={theme} />
         <Counter2 theme={theme}/>
         <Input  theme={theme}></Input>
 

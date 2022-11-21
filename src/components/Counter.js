@@ -4,7 +4,7 @@ import clsx from "clsx";
 import useCounter from "./hooks/_useCounter";
 
 export default function Counter(props) {
-  const {count1, count2, count3, increment, decrement, addThree, reset} = useCounter();
+  const {count1, count2, count3, increment, decrement, addThree, reset} = useCounter({startValue: 1});
 
   const { className, ...rest } = props;
   const classes = clsx("ui-counter", className, `ui-counter-${props.theme}`);

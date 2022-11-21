@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 
-export default function useCounter() {
-  const [count1, setCount] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const [count3, setCount3] = useState(0);
+export default function useCounter(props) {
+
+  const startValue = props.startValue || 0;
+
+  const [count1, setCount] = useState(startValue);
+  const [count2, setCount2] = useState(startValue);
+  const [count3, setCount3] = useState(startValue);
 
   const increment = () => { (count1 >= 9) ? setCount(0) : setCount(count1 + 1); setCount2(count1) }
   const decrement = () => { (count1 <= 0) ? setCount(9) : setCount(count1 - 1); setCount2(count1) }
@@ -24,3 +27,4 @@ export default function useCounter() {
 
   return {count1, count2, count3, increment, decrement, addThree, reset}
 }
+

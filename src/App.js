@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import './App.css';
 import iconsService from "./components/services/iconService";
 
@@ -31,12 +31,15 @@ export default function App()
 
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
+  const textInputRef = useRef();
+
   const buttonsNotHidden = buttons.filter((button) => !button.hidden);
   const buttonList = btnVisibility ? buttons : buttonsNotHidden;
 
 
   useEffect(() => {
     if(localStorage.getItem("theme") === "dark") { document.body.classList.add("body-dark")}
+    textInputRef.current.focus();
   }, [])
 
   useEffect(() => {
@@ -72,7 +75,7 @@ export default function App()
 
         <Counter theme={theme} />
         <Counter2 theme={theme}/>
-        <Input  theme={theme}></Input>
+        <Input inputRef={textInputRef} theme={theme}></Input>
 
         {/* test */}
 

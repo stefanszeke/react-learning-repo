@@ -4,12 +4,18 @@ import './index.css';
 import App from './App';
 import { ThemeProvider } from "./components/contexts/ThemeContext";
 
+function AppWrapper() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
-    <App />
-    </ThemeProvider>
+    <AppWrapper />
   </React.StrictMode>
 );

@@ -1,5 +1,6 @@
 import './styles/counter.css';
 import { useEffect } from "react";
+import Buttons from "./Buttons";
 import clsx from "clsx";
 import useCounter from "./hooks/_useCounter";
 import { useContext } from "react";
@@ -36,10 +37,10 @@ export default function Counter(props) {
         <h2>{count3}</h2>
       </div>
       <div className='ui-counter-buttons'>
-        <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
-        <button onClick={addThree}>add3</button>
-        <button onClick={reset}>reset</button>
+        <Buttons.Default onClick={increment}>+</Buttons.Default>
+        <Buttons.Default onClick={decrement}>-</Buttons.Default>
+        <Buttons.Default onClick={addThree}>add3</Buttons.Default>
+        <Buttons.Default onClick={reset}>reset</Buttons.Default>
       </div>
     </div>
   );

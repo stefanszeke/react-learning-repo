@@ -5,8 +5,9 @@ import { ThemeContext } from "./components/contexts/ThemeContext";
 
 
 import Link from './components/Link';
-import Button from "./components/Button";
-import Button2 from "./components/Button2";
+
+import Buttons from "./components/Buttons";
+
 import Container from "./components/Container";
 import Input from "./components/Input";
 import Counter from "./components/Counter";
@@ -59,14 +60,14 @@ export default function App()
           {btnClass}
 
           <div className="hide-show-buttons">
-            <Button2 onButtonClick={ () => setBtnVisibility(true) } > {iconsService.eye} show</Button2>
-            <Button2 onButtonClick={ () => setBtnVisibility(false) }> {iconsService.eyeSlash} hide</Button2>
+            <Buttons.Rounded onButtonClick={ () => setBtnVisibility(true) } > {iconsService.eye} show</Buttons.Rounded>
+            <Buttons.Rounded onButtonClick={ () => setBtnVisibility(false) }> {iconsService.eyeSlash} hide</Buttons.Rounded>
           </div>
 
           { buttonList.map( (button, index) => ( 
-            <Button onButtonClick={handleButtonClick} key={button.id} className={button.classes} visible={button.hidden} onCheckboxChange={() => handleCheckboxCheck(button.id-1)}>
+            <Buttons.CheckBox checkName='hidden ' onButtonClick={handleButtonClick} key={button.id} className={button.classes} visible={button.hidden} onCheckboxChange={() => handleCheckboxCheck(button.id-1)}>
               {button.name}
-            </Button>
+            </Buttons.CheckBox>
           ))}
 
           <Counter />
@@ -74,7 +75,6 @@ export default function App()
           <Input inputref={textInputRef} ></Input>
 
           {/* test */}
-
           <Scroller />
           
         </Container>

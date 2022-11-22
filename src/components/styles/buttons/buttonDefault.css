@@ -1,0 +1,11 @@
+.ui-button-default {
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 90ms;
+}
+
+.ui-button-default-dark {
+  color: white;
+  background-color: rgb(81, 82, 84);
+}

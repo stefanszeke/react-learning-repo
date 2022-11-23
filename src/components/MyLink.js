@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 
-export default function Link(props) {
+export default function MyLink(props) {
   const { children, className, ...rest } = props;
 
   const themeContext = useContext(ThemeContext);

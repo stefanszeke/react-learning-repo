@@ -1,16 +1,20 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import clsx from "clsx";
 import iconsService from "./services/iconService";
-import { useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { CountersContext } from "./contexts/CountersContext";
 
 
 
 
 export default function Counter2(props) {
   const [subCounter, setSubCounter] = useState(0);
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
   const [running, setRunning] = useState(false);
+
+
+  const {counter2, setCounter2} = useContext(CountersContext);
+  console.log(counter2);
 
   const themeContext = useContext(ThemeContext);
   const classes = clsx("ui-counter",'ui-counter2', props.className, `ui-counter-${themeContext.theme}`);
@@ -24,7 +28,7 @@ export default function Counter2(props) {
 
 
       if (subCounter === 4) {
-        setCounter(prev => prev + 1);
+        setCounter2(prev => prev + 1);
         setSubCounter(0);
       }
       return () => clearInterval(timer);
@@ -32,7 +36,7 @@ export default function Counter2(props) {
     else {
       setSubCounter(0);
     }
-  }, [counter, running, subCounter]);
+  }, [counter2, running, subCounter, setCounter2]);
 
   useEffect(() => {
     if(running) {
@@ -58,10 +62,11 @@ export default function Counter2(props) {
       </button>
 
       <div className="timer-box">
-      <h3 className="timer-number">{counter}</h3>
+      <h3 className="timer-number">{counter2}</h3>
         <div className="timer-state" ref={timerDiv}></div>
       </div>
 
+      <p>useContext()</p>
     </div>
   )
 }

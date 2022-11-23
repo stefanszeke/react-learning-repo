@@ -6,6 +6,7 @@ import useCounter from "./hooks/_useCounter";
 import { useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 
+
 export default function Counter(props) {
   const {count1, count2, count3, increment, decrement, addThree, reset} = useCounter({startValue: 1});
   const { className, ...rest } = props;
@@ -28,6 +29,7 @@ export default function Counter(props) {
     <div className={classes} {...rest}>
       <h3>Counter</h3>
       <p>( affect document.title, use custom hook )</p>
+      <p>( useContext )</p>
       <div className="ui-counters">
         <h3>counter: </h3>
         <h2>{count1}</h2>

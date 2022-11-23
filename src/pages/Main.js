@@ -1,7 +1,6 @@
-import { useEffect, useState, useRef, useContext} from "react";
+import { useEffect, useState, useRef } from "react";
 import './Main.css';
 import iconsService from "../components/services/iconService";
-import { ThemeContext } from "../components/contexts/ThemeContext";
 
 import MyLink from '../components/MyLink';
 import Buttons from "../components/Buttons";
@@ -11,7 +10,7 @@ import Counter from "../components/Counter";
 import Counter2 from "../components/Counter2";
 import Scroller from "../components/Scroller";
 import Clock from "../components/Clock";
-import ThemeChanger from "../components/ThemeChanger";
+
 
 
 const BUTTONSDATA = [
@@ -34,12 +33,8 @@ export default function Main()
   const buttonsNotHidden = buttons.filter((button) => !button.hidden);
   const buttonList = btnVisibility ? buttons : buttonsNotHidden;
 
-  const themeContext = useContext(ThemeContext);
-
-
 
   useEffect(() => { textInputRef.current.focus() }, [])
-
 
 
   return (

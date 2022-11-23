@@ -9,13 +9,13 @@ export default function App() {
   return (<>
   <nav>
   <ThemeChanger />
-    <Link to="/">Main</Link>
-    <Link to="/app2">App2</Link>
+    <Link to="react-learning-repo/">Main</Link>
+    <Link to="react-learning-repo/app2">App2</Link>
   </nav>
 
   <Routes>
-    <Route path="/" element={<Main />} />
-    <Route path="/app2" element={<App2 />} />
+    <Route path="react-learning-repo/" element={<Main />} />
+    <Route path="react-learning-repo/app2" element={<App2 />} />
   </Routes>
   </>);
 }

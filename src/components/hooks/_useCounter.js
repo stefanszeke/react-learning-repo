@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext} from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
 import { CountersContext } from "../contexts/CountersContext";
 
 export default function useCounter(props) {

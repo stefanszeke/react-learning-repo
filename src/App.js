@@ -4,18 +4,19 @@ import Main from "./pages/Main";
 import App2 from "./pages/App2";
 import ThemeChanger from "./components/ThemeChanger";
 
+const url = 'react-learning-repo'
 
 export default function App() {
   return (<>
   <nav>
   <ThemeChanger />
-    <Link to="react-learning-repo/">Main</Link>
-    <Link to="react-learning-repo/app2">App2</Link>
+    <Link to={`${url}/`}>Main</Link>
+    <Link to={`${url}/app2`}>App2</Link>
   </nav>
 
   <Routes>
-    <Route path="react-learning-repo/" element={<Main />} />
-    <Route path="react-learning-repo/app2" element={<App2 />} />
+    <Route path={`${url}/`} element={<Main />} />
+    <Route path={`${url}/app2`} element={<App2 />} />
   </Routes>
   </>);
 }

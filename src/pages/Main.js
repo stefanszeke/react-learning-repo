@@ -49,7 +49,6 @@ export default function Main()
         <Container >
           <div className="clock-theme-container">
             <Clock />
-            <ThemeChanger onThemeChangeClick={handleThemeChangeClick}/>
           </div>
 
           <MyLink href="https://stefanszeke.github.io/">stefanszeke.github.io</MyLink>
@@ -80,9 +79,6 @@ export default function Main()
   );
 
   
-  function handleThemeChangeClick() {
-    themeContext.toggleTheme();
-  }
 
   function handleButtonClick(event) {
     setBtnClass(`Button class: ${event.target.className}`);
